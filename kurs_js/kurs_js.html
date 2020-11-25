@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kurs Mata Uang</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <h2>Kurs Mata Uang</h2>
+    <table>
+        <tr>
+            <th>Masukan Nilai</th>
+            <th>Mata Uang</th>
+            <th>Rupiah</th>
+        </tr>
+        <tr>
+		    <td><input type="number" class="input" placeholder="Masukan Jumlah"></td>
+            <td><select class="kurs">
+                <option value="usd">Dollar US</option>
+                <option value="eur">Euro</option>
+                <option value="sgd">Dollar Singapore</option>
+                <option value="rgt">Ringgit Malaysia</option>
+                <option value="yj">Yen Jepang</option>
+                <option value="ras">Riyal Arab Saudi</option>
+            </select></td>
+            <td><input class="result" readonly></td>
+        </tr>
+        <tr>
+            <td><button class="hitung">Hitung</button></td>
+        </tr>
+    </table>
+
+	<script>
+		const input = document.querySelector(".input");
+		const kurs = document.querySelector(".kurs");
+		const btnHitung = document.querySelector(".hitung");
+		const result = document.querySelector(".result");
+
+		btnHitung.addEventListener("click", function() {
+            if (input.value == "") {
+				result.innerHTML = "Masukan Jumlah";
+            }
+
+			else if (kurs.value == "usd") {
+				result.value = parseInt(input.value) * 9915;
+			}
+
+			else if (kurs.value == "eur") {
+				result.value = parseInt(input.value) * 15888;
+			}
+
+			else if (kurs.value == "sgd") {
+				result.value = parseInt(input.value) * 13472;
+			}
+
+            else if (kurs.value == "rgt") {
+				result.value = parseInt(input.value) * 874;
+            }
+
+            else if (kurs.value == "yj") {
+				result.value = parseInt(input.value) * 120;
+            }
+            
+            else if (kurs.value == "ras") {
+				result.value = parseInt(input.value) * 3592;
+            }
+		})
+	</script>
+</body>
+</html>
